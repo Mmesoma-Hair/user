@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Sticker Pack">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1A2E"/>
+      <stop offset="1" stop-color="#6E0D25"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <circle cx="500" cy="470" r="300" fill="#FFF0F3" opacity="0.06"/>
+  <circle cx="500" cy="470" r="210" fill="#FFF0F3" opacity="0.06"/>
+  
+  <path d="M392 376 L560 376 L608 424 L608 624 L392 624 Z" fill="none" stroke="#FFF0F3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M560 376 L560 424 L608 424" fill="none" stroke="#FFF0F3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M500 452 L518 502 L572 504 L530 538 L546 590 L500 560 L454 590 L470 538 L428 504 L482 502 Z" fill="none" stroke="#FFF0F3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <text x="500" y="708" text-anchor="middle" fill="#FFF0F3" font-family="Georgia, serif" font-size="26" letter-spacing="6" opacity="0.7">APPAREL</text>
+  <text x="500" y="788" text-anchor="middle" fill="#FFF0F3" font-family="Georgia, serif" font-size="68" font-weight="700">Sticker Pack</text>
+  <text x="936" y="952" text-anchor="end" fill="#FFF0F3" font-family="Georgia, serif" font-size="24" letter-spacing="2" opacity="0.5">idealcommerce</text>
+</svg>

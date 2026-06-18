@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 1000 1000" role="img" aria-label="Classic Tee">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1A1A2E"/>
+      <stop offset="1" stop-color="#6E0D25"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#bg)"/>
+  <circle cx="500" cy="470" r="300" fill="#FFF0F3" opacity="0.06"/>
+  <circle cx="500" cy="470" r="210" fill="#FFF0F3" opacity="0.06"/>
+  
+  <path d="M430 360 L360 398 L388 474 L432 454 L432 624 L568 624 L568 454 L612 474 L640 398 L570 360
+           C548 392 452 392 430 360 Z" fill="none" stroke="#FFF0F3" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="64" y="96" fill="#FFF0F3" font-family="Georgia, serif" font-size="30" letter-spacing="4" opacity="0.85">IDEALWEAR</text>
+  <text x="500" y="708" text-anchor="middle" fill="#FFF0F3" font-family="Georgia, serif" font-size="26" letter-spacing="6" opacity="0.7">APPAREL</text>
+  <text x="500" y="788" text-anchor="middle" fill="#FFF0F3" font-family="Georgia, serif" font-size="68" font-weight="700">Classic Tee</text>
+  <text x="936" y="952" text-anchor="end" fill="#FFF0F3" font-family="Georgia, serif" font-size="24" letter-spacing="2" opacity="0.5">idealcommerce</text>
+</svg>
