@@ -6,7 +6,7 @@
  */
 
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://nasuru.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://eandewigs.com"
 ).replace(/\/$/, "");
 
 export const SITE_LOCALITY = "Lagos";
