@@ -35,9 +35,9 @@ export type StoreConfig = {
 };
 
 const FALLBACK: StoreConfig = {
-  name: "IdealCommerce",
+  name: "Eandewigs",
   tagline: "Shop the world.",
-  supportEmail: "support@idealcommerce.test",
+  supportEmail: "support@eandewigs.test",
   announcement: "",
   logoUrl: "",
   phone: "",
