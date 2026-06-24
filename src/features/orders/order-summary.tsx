@@ -3,7 +3,7 @@ import type { Order } from "@/types/order";
 const STATUS_LABELS: Record<string, string> = {
   pending: "Pending payment",
   paid: "Paid",
-  routing: "Routing",
+  routing: "Processing",
   partially_fulfilled: "Partially fulfilled",
   fulfilled: "Fulfilled",
   completed: "Completed",
