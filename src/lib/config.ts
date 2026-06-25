@@ -18,6 +18,10 @@ export type HeroConfig = {
   sideImages: string[];
 };
 
+/** A footer social link: display name, destination URL, and an icon key
+ * (see components/store/social-icons). Fully admin-managed. */
+export type SocialLink = { name: string; url: string; icon: string };
+
 export type StoreConfig = {
   name: string;
   tagline: string;
@@ -32,6 +36,8 @@ export type StoreConfig = {
   /** Hide out-of-stock products from the storefront. */
   hideOutOfStock: boolean;
   hero: HeroConfig;
+  /** Admin-managed footer social links. */
+  social: SocialLink[];
 };
 
 const FALLBACK: StoreConfig = {
@@ -56,6 +62,13 @@ const FALLBACK: StoreConfig = {
     overlayOpacity: 0.6,
     sideImages: [],
   },
+  social: [
+    { name: "Instagram", url: "https://instagram.com", icon: "instagram" },
+    { name: "TikTok", url: "https://tiktok.com", icon: "tiktok" },
+    { name: "YouTube", url: "https://youtube.com", icon: "youtube" },
+    { name: "Facebook", url: "https://facebook.com", icon: "facebook" },
+    { name: "Pinterest", url: "https://pinterest.com", icon: "pinterest" },
+  ],
 };
 
 /**
@@ -87,6 +100,25 @@ export const getStoreConfig = cache(async (): Promise<StoreConfig> => {
           (u): u is string => typeof u === "string" && u.length > 0,
         )
       : [];
+    // Present-but-empty means the admin removed all links, so only fall back
+    // when the key is absent/not a list.
+    const social: SocialLink[] = Array.isArray(s["footer.social_links"])
+      ? (s["footer.social_links"] as unknown[]).flatMap((it) => {
+          if (it && typeof it === "object") {
+            const o = it as Record<string, unknown>;
+            if (typeof o.name === "string" && typeof o.url === "string") {
+              return [
+                {
+                  name: o.name,
+                  url: o.url,
+                  icon: typeof o.icon === "string" ? o.icon : "website",
+                },
+              ];
+            }
+          }
+          return [];
+        })
+      : FALLBACK.social;
     return {
       name: str("store.name", FALLBACK.name),
       tagline: str("store.tagline", FALLBACK.tagline),
@@ -118,6 +150,7 @@ export const getStoreConfig = cache(async (): Promise<StoreConfig> => {
             : h.overlayOpacity,
         sideImages,
       },
+      social,
     };
   } catch {
     return FALLBACK;
