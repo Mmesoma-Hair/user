@@ -20,7 +20,7 @@ const MARQUEE = [
 
 export default async function Home() {
   const currency = selectedCurrency();
-  const [products, flash, categories, { name: storeName }] = await Promise.all([
+  const [products, flash, categories, { name: storeName, seo: seoSections }] = await Promise.all([
     getProducts({ currency }).catch(() => ({ results: [] })),
     getProducts({ currency, flash: true }).catch(() => ({ results: [] })),
     getCategories().catch(() => []),
@@ -131,7 +131,7 @@ export default async function Home() {
       </section>
 
       {/* SEO content (just above the footer) */}
-      <SeoContent storeName={storeName} />
+      <SeoContent storeName={storeName} sections={seoSections} />
     </div>
   );
 }

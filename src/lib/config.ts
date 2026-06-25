@@ -22,6 +22,10 @@ export type HeroConfig = {
  * (see components/store/social-icons). Fully admin-managed. */
 export type SocialLink = { name: string; url: string; icon: string };
 
+/** A home-page SEO content block. `{store}` in either field is replaced with
+ * the store name; blank lines in `body` separate paragraphs. Admin-managed. */
+export type SeoSection = { heading: string; body: string };
+
 export type StoreConfig = {
   name: string;
   tagline: string;
@@ -38,6 +42,8 @@ export type StoreConfig = {
   hero: HeroConfig;
   /** Admin-managed footer social links. */
   social: SocialLink[];
+  /** Admin-managed home-page SEO content blocks. */
+  seo: SeoSection[];
 };
 
 const FALLBACK: StoreConfig = {
@@ -69,6 +75,9 @@ const FALLBACK: StoreConfig = {
     { name: "Facebook", url: "https://facebook.com", icon: "facebook" },
     { name: "Pinterest", url: "https://pinterest.com", icon: "pinterest" },
   ],
+  // Empty fallback: the SEO block degrades gracefully if the API is unreachable
+  // (the backend always supplies the rich default otherwise).
+  seo: [],
 };
 
 /**
@@ -119,6 +128,17 @@ export const getStoreConfig = cache(async (): Promise<StoreConfig> => {
           return [];
         })
       : FALLBACK.social;
+    const seo: SeoSection[] = Array.isArray(s["content.seo_sections"])
+      ? (s["content.seo_sections"] as unknown[]).flatMap((it) => {
+          if (it && typeof it === "object") {
+            const o = it as Record<string, unknown>;
+            if (typeof o.heading === "string" && typeof o.body === "string") {
+              return [{ heading: o.heading, body: o.body }];
+            }
+          }
+          return [];
+        })
+      : FALLBACK.seo;
     return {
       name: str("store.name", FALLBACK.name),
       tagline: str("store.tagline", FALLBACK.tagline),
@@ -151,6 +171,7 @@ export const getStoreConfig = cache(async (): Promise<StoreConfig> => {
         sideImages,
       },
       social,
+      seo,
     };
   } catch {
     return FALLBACK;
