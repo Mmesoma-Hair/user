@@ -48,7 +48,7 @@ export type StoreConfig = {
 
 const FALLBACK: StoreConfig = {
   name: "Eandewigs",
-  tagline: "Shop the world.",
+  tagline: "Best Wigs You can Trust",
   supportEmail: "support@eandewigs.test",
   announcement: "",
   logoUrl: "",
