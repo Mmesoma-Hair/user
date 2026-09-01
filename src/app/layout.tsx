@@ -10,7 +10,6 @@ import { getStoreConfig } from "@/lib/config";
 import { brandStyle } from "@/lib/theme";
 import {
   DEFAULT_KEYWORDS,
-  SITE_LOCATION,
   SITE_URL,
   defaultDescription,
   organizationLd,
@@ -31,7 +30,9 @@ const playfair = Playfair_Display({
 export async function generateMetadata(): Promise<Metadata> {
   const { name, tagline, logoUrl } = await getStoreConfig();
   const description = defaultDescription(name, tagline);
-  const title = `${name} — Clothing Store & Supplier in ${SITE_LOCATION}`;
+  const title = tagline
+    ? `${name} — ${tagline}`
+    : `${name} — Best Wigs You can Trust`;
   return {
     metadataBase: new URL(SITE_URL),
     title: { default: title, template: `%s · ${name}` },

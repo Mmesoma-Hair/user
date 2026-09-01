@@ -32,7 +32,7 @@ function seoDescription(product: ProductDetail): string {
   return (
     (base && base.length > 40
       ? base
-      : `Shop ${brand}${product.title} at the best clothing store in ${SITE_LOCATION}.`) +
+      : `Shop ${brand}${product.title} at the best wig store in ${SITE_LOCATION}.`) +
     ` Fast delivery across Lagos & nationwide.`
   ).slice(0, 300);
 }

@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 import { getStoreConfig } from "@/lib/config";
 import { SITE_LOCATION } from "@/lib/seo";
 
-export const alt = "Clothing store & supplier in Lagos, Nigeria";
+export const alt = "Best Wigs You can Trust — Lagos, Nigeria";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 // Render on demand (not at build) so @vercel/og has a proper request context.
@@ -11,7 +11,7 @@ export const dynamic = "force-dynamic";
 
 // Branded social-share card (shown when the homepage URL is shared).
 export default async function OpengraphImage() {
-  let name = "Prime Clothings";
+  let name = "Eandewigs";
   let tagline = "";
   try {
     const cfg = await getStoreConfig();
@@ -51,7 +51,7 @@ export default async function OpengraphImage() {
             {name}
           </div>
           <div style={{ marginTop: 20, fontSize: 34, color: "#F2D2DA" }}>
-            {tagline || "Premium clothing store & supplier in Lagos, Nigeria"}
+            {tagline || "Best Wigs You can Trust"}
           </div>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: 14 }}>

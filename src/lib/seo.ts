@@ -1,8 +1,8 @@
 /**
  * Central SEO config + structured-data (JSON-LD) builders.
  *
- * Targets local intent — a clothing store/supplier in Lagos, Nigeria — via rich
- * metadata, Organization/LocalBusiness + WebSite + Product + Breadcrumb schema.
+ * Targets local intent — a wig store in Lagos, Nigeria — via rich metadata,
+ * Organization/Store + WebSite + Product + Breadcrumb schema.
  */
 
 export const SITE_URL = (
@@ -23,19 +23,18 @@ export function absoluteUrl(path = "/"): string {
 
 /** Keyword-rich default description woven around the target local query. */
 export function defaultDescription(name: string, tagline: string): string {
-  return `${name} — premium clothing store & supplier in ${SITE_LOCATION}. Shop the latest fashion and quality clothing with fast delivery across Lagos and nationwide.${
-    tagline ? ` ${tagline}` : ""
-  }`;
+  const slogan = tagline || "Best Wigs You can Trust";
+  return `${name} — ${slogan}. Shop premium human hair wigs in ${SITE_LOCATION} with fast delivery across Lagos and nationwide.`;
 }
 
 export const DEFAULT_KEYWORDS = [
-  "clothing store Lagos",
-  "clothing supplier Lagos",
-  "best clothing in Lagos Nigeria",
-  "fashion store Lagos Nigeria",
-  "buy clothes online Lagos",
-  "Nigerian fashion",
-  "clothing Nigeria",
+  "wigs Lagos",
+  "wig store Lagos",
+  "human hair wigs Nigeria",
+  "best wigs in Lagos Nigeria",
+  "buy wigs online Lagos",
+  "Nigerian wigs",
+  "wig supplier Nigeria",
 ];
 
 type Json = Record<string, unknown>;
@@ -50,7 +49,7 @@ export function organizationLd(opts: {
 }): Json {
   const ld: Json = {
     "@context": "https://schema.org",
-    "@type": ["Organization", "ClothingStore"],
+    "@type": ["Organization", "Store"],
     "@id": `${SITE_URL}/#organization`,
     name: opts.name,
     url: SITE_URL,

@@ -20,7 +20,7 @@ export async function generateMetadata({
     title: `${cat.name} — Journal`,
     description:
       cat.description ||
-      `${cat.name} articles, style guides and tips from our clothing store in ${SITE_LOCATION}.`,
+      `${cat.name} articles, style guides and tips from our wig store in ${SITE_LOCATION}.`,
     alternates: { canonical: `/blog/category/${cat.slug}` },
   };
 }

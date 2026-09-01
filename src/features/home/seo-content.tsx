@@ -2,7 +2,7 @@ import type { SeoSection } from "@/lib/config";
 
 /**
  * Long-form, admin-managed SEO content for the storefront home page (targets
- * queries like "best clothing supplier in Lagos Nigeria"). Each section's
+ * queries like "best wig store in Lagos Nigeria"). Each section's
  * `{store}` token is replaced with the store name, and blank lines in the body
  * split it into paragraphs. Renders nothing when there are no sections.
  */

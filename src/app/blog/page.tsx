@@ -8,7 +8,7 @@ import { SITE_LOCATION } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Journal — Style, Fashion & Guides",
-  description: `Style guides, fashion tips and the latest from our clothing store in ${SITE_LOCATION}.`,
+  description: `Style guides, wig tips and the latest from our wig store in ${SITE_LOCATION}.`,
   alternates: { canonical: "/blog" },
 };
 

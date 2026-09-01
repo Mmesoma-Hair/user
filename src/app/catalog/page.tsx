@@ -6,9 +6,9 @@ import { getCategories, getProducts } from "@/lib/catalog";
 import { selectedCurrency } from "@/lib/currency";
 
 export const metadata = {
-  title: "Shop Clothing in Lagos, Nigeria",
+  title: "Shop Wigs in Lagos, Nigeria",
   description:
-    "Browse the latest clothing and fashion — quality pieces with fast delivery across Lagos, Nigeria and nationwide.",
+    "Browse premium human hair wigs — quality pieces with fast delivery across Lagos, Nigeria and nationwide.",
   alternates: { canonical: "/catalog" },
 };
 
