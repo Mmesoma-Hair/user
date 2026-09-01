@@ -1,3 +1,4 @@
+import { formatMoney } from "@/lib/format-money";
 import type { Order } from "@/types/order";
 
 const STATUS_LABELS: Record<string, string> = {
@@ -12,7 +13,7 @@ const STATUS_LABELS: Record<string, string> = {
 };
 
 function money(amount: string, currency: string): string {
-  return `${currency} ${amount}`;
+  return formatMoney(amount, currency);
 }
 
 export function OrderSummary({ order }: { order: Order }) {

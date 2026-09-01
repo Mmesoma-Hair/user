@@ -2,8 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-import { cn } from "@/lib/utils";
 import { AddToCart } from "@/features/cart/add-to-cart";
+import { formatMoney } from "@/lib/format-money";
+import { cn } from "@/lib/utils";
 import { OrderChatButton } from "@/features/order-chat/order-chat-button";
 import type { MoneyDisplay, ProductDetail, Variant } from "@/types/catalog";
 
@@ -22,18 +23,6 @@ function displayForQty(v: Variant, qty: number): MoneyDisplay | null {
     }
   }
   return best;
-}
-
-function formatMoney(amount: number, currency: string): string {
-  try {
-    return new Intl.NumberFormat(undefined, {
-      style: "currency",
-      currency,
-      maximumFractionDigits: 2,
-    }).format(amount);
-  } catch {
-    return `${currency} ${amount.toFixed(2)}`;
-  }
 }
 
 /**
